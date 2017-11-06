@@ -28,6 +28,14 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Use Bootstrap for styling
+gem 'bootstrap-sass', '~> 3.3.6'
+
+# Use jQuery for easier javascript
+gem 'jquery-rails', '~> 4.3.1'
+# Use Devise for authentication
+gem 'devise', '~> 4.2'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -55,9 +63,3 @@ end
 group :test do
   gem 'capybara', '~> 2.9', '>= 2.9.1'
 end
-
-# Use Bootstrap for styling
-gem 'bootstrap-sass', '~> 3.3.6'
-
-# Use jQuery for easier javascript
-gem 'jquery-rails', '~> 4.3.1'

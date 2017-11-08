@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Event.destroy_all
+
 matthijs = User.create!(
   email: 'matthijs@gmail.com',
   password: '123456'

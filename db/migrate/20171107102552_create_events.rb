@@ -4,7 +4,7 @@ class CreateEvents < ActiveRecord::Migration[5.1]
       t.string :name
       t.text :description
       t.string :location
-      t.decimal :price,
+      t.decimal :price
       t.integer :capacity
       t.boolean :includes_food
       t.boolean :includes_drink
@@ -12,4 +12,5 @@ class CreateEvents < ActiveRecord::Migration[5.1]
       t.datetime :ends_at
       t.boolean :active
     end
+end
 end

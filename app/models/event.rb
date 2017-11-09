@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
   #attr_accessible :ends_at,  :starts_at
   belongs_to :user
+  has_many :photos
   after_initialize :init
 
   validates :name, presence: true

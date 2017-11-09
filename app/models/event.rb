@@ -7,7 +7,7 @@ class Event < ApplicationRecord
   validates :description, presence: true, length: { maximum: 500 }
   validates :starts_at, presence: true
   validates :ends_at, presence: true
-#  validate  :end_date_is_after_start_date, on: :update
+  validate  :end_date_is_after_start_date, on: :update
 
 
 
@@ -26,6 +26,7 @@ def init
   self.includes_food ||= false #let's you set a default association
   self.includes_drink ||= false
   self.active ||= true
-
+end
+def belongs_to
 end
 end

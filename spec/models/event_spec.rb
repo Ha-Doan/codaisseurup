@@ -5,6 +5,7 @@ RSpec.describe Event, type: :model do
   describe "association with user" do
     it { is_expected.to belong_to :user}
 end
+=begin
 describe "validations" do
     it "is invalid without a name" do
       event = Event.new(name: "")
@@ -24,4 +25,16 @@ describe "validations" do
       expect(event.errors).to have_key(:name)
     end
   end
+=end
+  describe "association with booking" do
+  let(:guest_user) { create :user, email: "guest@user.com" }
+  let(:host_user) { create :user, email: "host@user.com" }
+
+  let!(:event) { create :event, user: host_user }
+  let!(:booking) { create :booking, event: event, user: guest_user }
+
+  it "has guests" do
+    expect(event.guests).to include(guest_user)
+  end
+end
 end

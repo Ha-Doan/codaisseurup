@@ -39,7 +39,7 @@ end
   def update
     if @event.update(event_params)
       image_params.each do |image|
-      @event.photos.create(image: image)
+        @event.photos.create(image: image)
       end
       redirect_to edit_event_path(@event), notice: "Event updated"
     else
@@ -62,6 +62,7 @@ end
       )
   end
   def image_params
+    Rails.logger.info "IMAGE_PARAMS: #{params[:images]}"
   params[:images].present? ? params.require(:images) : []
 end
 end

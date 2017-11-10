@@ -2,6 +2,8 @@ class Event < ApplicationRecord
   #attr_accessible :ends_at,  :starts_at
   belongs_to :user
   has_many :photos
+  has_many :bookings, dependent: :destroy
+  has_many :guests, through: :bookings, source: :user
   after_initialize :init
 
   validates :name, presence: true
@@ -17,7 +19,7 @@ class Event < ApplicationRecord
 #######
 
 def end_date_is_after_start_date
-  if self.ends_at <= self.starts_at
+  if :ends_at <= :starts_at
     puts "huhu"
     errors.add(:ends_at, "must be at least one day after the start day")
   end

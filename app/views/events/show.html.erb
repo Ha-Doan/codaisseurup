@@ -25,8 +25,12 @@
 
 </div>
 <!-- Photos -->
-<div><h4>Photos</h4>
+<h4>Photos</h4>
 <% @event.photos.each do |photo| %>
-  <%= image_tag photo.image %>
-<% end %></div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <%= image_tag photo.image.thumbnail %>
+  </div>
+</div>
+<% end %>
 <%= link_to "Back", events_path, class: "btn btn-default" %>
